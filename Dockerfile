@@ -1,4 +1,3 @@
-FROM openjdk:8-jdk
-VOLUME /tmp
-ADD target/spannerdemo-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+FROM alpine:latest  # Use a lightweight base image
+RUN echo "Hello World!" > /hello.txt  # Create a file with the message
+CMD ["cat", "/hello.txt"]  # Print the file contents when the container runs
